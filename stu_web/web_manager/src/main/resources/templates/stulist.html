@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生管理页面</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>学生姓名</th>
+        <th>学生密码</th>
+        <th>学生年龄</th>
+        <th>学生班级</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each=" stu : ${stulist}">
+        <td th:text="${stu.sid}"></td>
+        <td th:text="${stu.sname}"></td>
+        <td th:text="${stu.spwd}"></td>
+        <td th:text="${stu.sage}"></td>
+        <td th:text="${stu.cla.cname}"></td>
+        <td>修改 删除</td>
+    </tr>
+</table>
+</body>
+</html>
