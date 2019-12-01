@@ -14,6 +14,10 @@ public class ClsServiceImpl implements IClassService {
     @Autowired
     private ClsMapper clsMapper;
 
+    /**
+     * 查询所有的班级
+     * @return
+     */
     @Override
     public List<ClassEntity> clsList() {
 
@@ -24,6 +28,11 @@ public class ClsServiceImpl implements IClassService {
         return clsMapper.selectList(null);
     }
 
+    /**
+     * 按Id查询班级信息
+     * @param id
+     * @return
+     */
     @Override
     public ClassEntity queryById(Integer id) {
 
@@ -48,5 +57,38 @@ public class ClsServiceImpl implements IClassService {
         classEntity.setCnum(cnum);
         int i = clsMapper.updateById(classEntity);
         return i;
+    }
+
+    /**
+     * 添加一条班级信息
+     * @param cla
+     * @return
+     */
+    @Override
+    public int insClass(ClassEntity cla) {
+
+        return clsMapper.insert(cla);
+    }
+
+    /**
+     * 根据Id删除一条班级信息
+     * @param cid
+     * @return
+     */
+    @Override
+    public int delClass(Integer cid) {
+
+        return clsMapper.deleteById(cid);
+    }
+
+    /**
+     * 根据Id修改班级信息
+     * @param cla
+     * @return
+     */
+    @Override
+    public int updClass(ClassEntity cla) {
+
+        return clsMapper.updateById(cla);
     }
 }

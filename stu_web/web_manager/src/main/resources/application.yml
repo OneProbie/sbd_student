@@ -4,6 +4,7 @@ dubbo:
   application:
     name: web-manager
   registry:
-    address: zookeeper://192.168.184.188:2181
+    address: zookeeper://192.168.57.188:2181
   consumer:
+    #启动顺序
     check: false

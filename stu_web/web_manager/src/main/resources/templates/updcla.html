@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改班级页面</title>
+</head>
+<body>
+<h4>修改班级页面</h4>
+<form action="/classes/updcla" method="post">
+    <input type="hidden" name="cid" th:value="${cla.cid}">
+<table>
+    <tr>
+        <td>班级ID</td>
+        <td th:text="${cla.cid}"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>班级名字</td>
+        <td><input type="text" name="cname" th:value="${cla.cname}"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>班级人数</td>
+        <td><input type="number" name="cnum" th:value="${cla.cnum}"></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><input type="submit" value="修改"></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

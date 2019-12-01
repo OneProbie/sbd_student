@@ -5,7 +5,8 @@
     <title>班级管理系统</title>
 </head>
 <body>
-<table>
+<h4><a href="/classes/addskip">添加班级</a></h4>
+<table border="1px">
     <tr>
         <th>ID</th>
         <th>班级名</th>
@@ -16,7 +17,8 @@
         <td th:text="${cls.cid}"></td>
         <td th:text="${cls.cname}"></td>
         <td th:text="${cls.cnum}"></td>
-        <td>修改  删除</td>
+        <td><a th:href="|/classes/updskip?cid=${cls.cid}|">修改</a>
+            <a th:href="|/classes/delcla?cid=${cls.cid}|">删除</a></td>
     </tr>
 </table>
 </body>
