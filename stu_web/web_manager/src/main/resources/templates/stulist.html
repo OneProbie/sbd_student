@@ -20,8 +20,11 @@
         <td th:text="${stu.spwd}"></td>
         <td th:text="${stu.sage}"></td>
         <td th:text="${stu.cla.cname}"></td>
-        <td>修改 删除</td>
+        <td><a th:href="|${#request.getContextPath()}/student/queryById?sid=${stu.sid}|">修改</a>
+            <a th:href="|${#request.getContextPath()}/student/deleById?sid=${stu.sid}&cid=${stu.cid}|">删除</a>
+        </td>
     </tr>
 </table>
+<h1><a href="/student/jumpAdd">分布式添加学生</a></h1>
 </body>
 </html>

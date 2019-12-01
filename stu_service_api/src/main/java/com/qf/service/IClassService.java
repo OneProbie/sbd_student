@@ -10,4 +10,7 @@ public interface IClassService {
 
     ClassEntity queryById(Integer id);
 
+    int updateClassNum(Integer cid);
+
+    int updateClassNumJianYi(Integer cid);
 }

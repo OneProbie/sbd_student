@@ -29,4 +29,24 @@ public class ClsServiceImpl implements IClassService {
 
         return clsMapper.selectById(id);
     }
+
+    @Override
+    public int updateClassNum(Integer cid) {
+        ClassEntity classEntity = clsMapper.selectById(cid);
+        Integer cnum = classEntity.getCnum();
+        cnum=cnum-1;
+        classEntity.setCnum(cnum);
+        int i = clsMapper.updateById(classEntity);
+        return i;
+    }
+
+    @Override
+    public int updateClassNumJianYi(Integer cid) {
+        ClassEntity classEntity = clsMapper.selectById(cid);
+        Integer cnum = classEntity.getCnum();
+        cnum=cnum+1;
+        classEntity.setCnum(cnum);
+        int i = clsMapper.updateById(classEntity);
+        return i;
+    }
 }

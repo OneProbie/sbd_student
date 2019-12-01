@@ -35,4 +35,35 @@ public class StuServiceImpl implements IStuService {
 
         return stulist;
     }
+
+    //查询一个学生
+    @Override
+    public StuEntity queryById(Integer sid) {
+        StuEntity student = stuMapper.selectById(sid);
+        ClassEntity classes = classService.queryById(student.getCid());
+        student.setCla(classes);
+        return student;
+    }
+
+    //修改学生信息
+    @Override
+    public int updateById(StuEntity student) {
+        int i = stuMapper.updateById(student);
+        return i;
+    }
+
+    @Override
+    public int deleById(Integer sid) {
+        int i = stuMapper.deleteById(sid);
+        return i;
+    }
+
+    @Override
+    public int addStudent(StuEntity stuEntity) {
+        int insert = stuMapper.insert(stuEntity);
+        return insert;
+
+    }
+
+
 }

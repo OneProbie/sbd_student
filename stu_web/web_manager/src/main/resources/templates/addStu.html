@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>添加学生页面分布式</h1>
+<form action="/student/addStudent" method="post">
+学生姓名:<input type="text" name="sname" /><br>
+    学生年龄:<input type="text" name="sage" /><br/>
+    学生密码:<input type="text" name="spwd" /><br/>
+    学生所在的班级:<select name="cid">
+                    <option th:each="cls :${classes}" th:text="${cls.cname}" th:value="${cls.cid}"></option>
+                </select>
+    <br/>
+    <input type="submit">
+</form>
+</body>
+</html>
